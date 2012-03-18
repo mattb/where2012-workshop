@@ -21,7 +21,7 @@ EM.run do
           if @@count % 1000 == 0
             puts @@count
           end
-          if @@count > 5
+          if @@count > 35000
             filename = "#{Time.now.to_i}"
             puts "#{filename} uploading."
 
@@ -54,6 +54,10 @@ EM.run do
 
   http.stream do |chunk|
     parse << chunk
+  end
+  http.errback do
+    puts "HTTP error."
+    EM.stop
   end
 
 
