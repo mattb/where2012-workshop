@@ -8,14 +8,16 @@ EM.run do
   @@count = 0
 
   def object_parsed(obj)
-    obj['entities']['urls'].map { |ent| ent['expanded_url'] }.grep(/4sq.com/).each { |url|
+    obj['entities']['urls'].map { |ent| ent['expanded_url'] }.grep(/4sq.com\//).each { |url|
+      puts url
       http = EventMachine::HttpRequest.new(url).get :redirects => 5
       http.callback {
         html = http.response.split(/\n/).grep(/options\['venue'\]/).first
         if !html.nil?
+          json = html.slice(29,html.size).strip.gsub(/;$/,'')
           @@buffer.puts(Yajl::Encoder.encode({
             'twitter' => obj,
-            '4sq' => Yajl::Parser.parse(html.slice(29,html.size).strip.gsub(/;$/,''))
+            '4sq' => Yajl::Parser.parse(json)
           }))
           @@count += 1
           if @@count % 1000 == 0
