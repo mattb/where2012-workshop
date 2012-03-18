@@ -9,7 +9,6 @@ EM.run do
 
   def object_parsed(obj)
     obj['entities']['urls'].map { |ent| ent['expanded_url'] }.grep(/4sq.com\//).each { |url|
-      puts url
       http = EventMachine::HttpRequest.new(url).get :redirects => 5
       http.callback {
         html = http.response.split(/\n/).grep(/options\['venue'\]/).first
@@ -51,8 +50,7 @@ EM.run do
   http = EventMachine::HttpRequest.new("https://stream.twitter.com/1/statuses/filter.json",{:port=>443}).post(
     :head =>{ 'Authorization' => [ user, password ] } , 
     :body =>{"track"=>keywords},
-    :keepalive=>true,
-    :timeout=>-1)
+    :inactivity_timeout => 30)
 
   http.stream do |chunk|
     parse << chunk
