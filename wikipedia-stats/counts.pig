@@ -1,0 +1,10 @@
+SET default_parallel 10;
+register ./PigStorageWithInputPath.jar;
+DATA = LOAD 's3://wikipedia-stats/*.gz' USING PigStorageWithInputPath(' ') AS (lang, name, count:int, other, filename:chararray);
+ENDATA = FILTER DATA BY lang=='en';
+HOURDATA = FOREACH ENDATA GENERATE lang, name, count, ((int)REGEX_EXTRACT(filename, '.*pagecounts-[0-9]+-([0-9][0-9]).*', 1))/4 AS hour;
+NAMES = GROUP HOURDATA BY (hour, name);
+COUNTS = FOREACH NAMES GENERATE group.hour, group.name, SUM(HOURDATA.count) as c;
+FCOUNT = FILTER COUNTS BY c > 500;
+SORTED = ORDER FCOUNT BY hour, c DESC;
+STORE SORTED INTO 's3://wikipedia-stats/out.gz' USING PigStorage('\t');

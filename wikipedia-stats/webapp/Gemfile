@@ -1,0 +1,11 @@
+source 'https://rubygems.org'
+gem "sinatra", :require => "sinatra/base"
+gem "capistrano"
+gem "thin"
+gem "shotgun"
+gem "slogger"
+gem "tire"
+gem "multi_json"
+gem "rack-cache"
+gem "dalli"
+gem "unicorn"
