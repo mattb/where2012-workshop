@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>OGRGeoJSON</name>
+<Schema name="OGRGeoJSON" id="OGRGeoJSON">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="timestamp" type="string"></SimpleField>
+</Schema>
+  <Placemark>
+	<name>I'm at San Francisco International Airport (SFO) (San Francisco, CA) w/ 139 others http://t.co/JHgQGZ32</name>
+	<ExtendedData><SchemaData schemaUrl="#OGRGeoJSON">
+		<SimpleData name="Name">I'm at San Francisco International Airport (SFO) (San Francisco, CA) w/ 139 others http://t.co/JHgQGZ32</SimpleData>
+		<SimpleData name="timestamp">2012-03-19T08:18:46-07:00</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-122.38615,37.616405</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>I'm at Gate 56B (San Francisco, CA) http://t.co/8m9MZMSY</name>
+	<ExtendedData><SchemaData schemaUrl="#OGRGeoJSON">
+		<SimpleData name="Name">I'm at Gate 56B (San Francisco, CA) http://t.co/8m9MZMSY</SimpleData>
+		<SimpleData name="timestamp">2012-03-19T08:26:34-07:00</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-122.38118,37.617935</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>I'm at American Airlines Admirals Club (San Francisco, CA) http://t.co/KAlj7JPb</name>
+	<ExtendedData><SchemaData schemaUrl="#OGRGeoJSON">
+		<SimpleData name="Name">I'm at American Airlines Admirals Club (San Francisco, CA) http://t.co/KAlj7JPb</SimpleData>
+		<SimpleData name="timestamp">2012-03-19T08:26:53-07:00</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-122.38338,37.61713</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>I'm at SFO AirTrain Station - Terminal 3 (San Francisco, CA) http://t.co/wsAuBKvX</name>
+	<ExtendedData><SchemaData schemaUrl="#OGRGeoJSON">
+		<SimpleData name="Name">I'm at SFO AirTrain Station - Terminal 3 (San Francisco, CA) http://t.co/wsAuBKvX</SimpleData>
+		<SimpleData name="timestamp">2012-03-19T08:32:23-07:00</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-122.38673,37.617496</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>I'm at Dollar Rent A Car (San Francisco, CA) http://t.co/vkD2kls0</name>
+	<ExtendedData><SchemaData schemaUrl="#OGRGeoJSON">
+		<SimpleData name="Name">I'm at Dollar Rent A Car (San Francisco, CA) http://t.co/vkD2kls0</SimpleData>
+		<SimpleData name="timestamp">2012-03-19T08:42:02-07:00</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-122.40102,37.628197</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>I'm at 7-Eleven (San Bruno, CA) http://t.co/6UKMdeft</name>
+	<ExtendedData><SchemaData schemaUrl="#OGRGeoJSON">
+		<SimpleData name="Name">I'm at 7-Eleven (San Bruno, CA) http://t.co/6UKMdeft</SimpleData>
+		<SimpleData name="timestamp">2012-03-19T09:01:10-07:00</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-122.40985,37.62636</coordinates></Point>
+  </Placemark>
+</Folder></Document></kml>
