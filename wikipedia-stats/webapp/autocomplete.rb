@@ -11,7 +11,7 @@ NAMES = {
 
 class Autocomplete < Sinatra::Base
   use Rack::Cache,
-    :verbose => true,
+    :verbose => false,
     :metastore => "memcached://127.0.0.1",
   :entitystore => "memcached://127.0.0.1"
 
