@@ -17,7 +17,7 @@ EM.run do
           @@buffer.puts(Yajl::Encoder.encode({
             'twitter' => obj,
             '4sq' => Yajl::Parser.parse(json)
-          }))
+          }, :pretty => true))
         end
       }
     }

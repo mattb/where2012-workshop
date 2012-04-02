@@ -15,6 +15,7 @@ GEM
     happening (0.2.5)
       em-http-request
     http_parser.rb (0.5.3)
+    multi_json (1.2.0)
     yajl-ruby (1.1.0)
 
 PLATFORMS
@@ -22,4 +23,5 @@ PLATFORMS
 
 DEPENDENCIES
   happening
+  multi_json
   yajl-ruby
