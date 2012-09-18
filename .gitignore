@@ -1,4 +1,6 @@
 config.js
 vendor
 .bundle
+.jbundler
 .*.sw*
+.DS_Store

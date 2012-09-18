@@ -2,7 +2,14 @@
 require 'rubygems'
 require 'java'
 require 'cgi'
-Dir.glob("lib/*").each { |j| require j }
+require 'bundler'
+Bundler.require
+require 'jbundler'
+
+java_import Java::edu.uci.ics.jung.algorithms.filters.VertexPredicateFilter
+java_import Java::edu.uci.ics.jung.graph.DirectedSparseGraph
+java_import Java::edu.uci.ics.jung.io.GraphMLWriter
+java_import Java::org.apache.commons.collections15.Predicate
 
 def url_to_id(url)
   if url.match(/.*\/([^\/]+)>$/)
@@ -13,9 +20,9 @@ def url_to_id(url)
   end
 end
 
-G = Java::edu.uci.ics.jung.graph.DirectedSparseGraph.new
+G = DirectedSparseGraph.new
 
-pred=Java::org.apache.commons.collections15.Predicate.new
+pred=Predicate.new
 class << pred
   def evaluate(v)
     G.inDegree(v) > 5
@@ -29,6 +36,6 @@ while !(line=$stdin.gets).nil?
   G.addEdge(e, url_to_id(s), url_to_id(o))
   e += 1
 end
-w = Java::edu.uci.ics.jung.io.GraphMLWriter.new
-filter = Java::edu.uci.ics.jung.algorithms.filters.VertexPredicateFilter.new(pred)
+w = GraphMLWriter.new
+filter = VertexPredicateFilter.new(pred)
 w.save(filter.transform(G), java.io.FileWriter.new("out.graphml"))

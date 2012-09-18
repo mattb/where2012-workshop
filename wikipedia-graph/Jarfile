@@ -1,0 +1,2 @@
+jar 'net.sf.jung:jung-graph-impl', '2.0.1'
+jar 'net.sf.jung:jung-io', '2.0.1'
